@@ -14,8 +14,12 @@ echo "2) Uninstall"
 read -p "Enter your choice (1 or 2): " choice
 
 if [[ "$choice" == "1" ]]; then
-    echo "Installing X-UI with Docker..."
+    echo "Updating and upgrading system..."
+    apt-get update && apt-get upgrade -y
+    sleep 5
 
+    echo "Installing X-UI with Docker..."
+    
     curl -fsSL https://get.docker.com | sh
     sleep 50
 
